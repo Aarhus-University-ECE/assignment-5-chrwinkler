@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include<malloc.h>
+#include <stdlib.h>
 #include "circle.h"
 #include"jollyjumper.h"
+
 
 void printCircle(circle c) {
 	printf("p.x: %d, p.y: %d, r: %d\n", c.p.x, c.p.y, c.r);
@@ -20,12 +21,25 @@ int main(void) {
 	translate(&c[1], &p);
 	printCircle(c[1]);
 	printf("isValid: %d", circleIsValid(&c[1]));
+	printf("\n");
+
 
 	/*answer to exercise 7.b*/
 	int n; /*number of numbers to read*/
 	/*readin n and check that is is OK*/
 
+	printf(" Enter size of seqaunce;\n");
+	scanf("%d",&n);
+		
+
 	int *numbers = malloc(sizeof(int) * n); /*the numbers read*/
+
+   int num;
+	printf(" Enter numbers of seqaunce;\n");
+	for(int i =0; i < n; i++){
+		scanf("%d",&num);
+		numbers[i] = num;
+	}
 
 	/*readin the n numbers in the array numbers*/
 
